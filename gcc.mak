@@ -29,10 +29,18 @@ F77    = gfortran
 MODS = consts.o diff.o 
 OBJS = ipns.o grad1.o grad2.o error.o bslib1.o bslib2.o
 OBJECTS = exit.o
-
+#
+# Optionally use Numerical-Recipes (commercial licensed)
+#
 ifdef USE_NR
-	OBJECTS += nr_rtflsp.o
+  ifeq ($(LIBNR_DIR),)
+    LIBNR_DIR = $(HOME)/git/NR-utilities
+  endif
+  LIB += -L$(LIBNR_DIR) -lnr
 endif
+#ifdef USE_NR
+#  OBJECTS += nr_rtflsp.o
+#endif
 #
 #  End of objects
 #
