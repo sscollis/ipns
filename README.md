@@ -1,4 +1,4 @@
-# IPNS:  Incompressible Flow Over a Parabolic Cylinder
+# IPNS:  Incompressible Parabolized Navier-Stokes 
 
 This solves the incompressible paraboloized Navier-Stokes equations
 for a parabolic cylinder.
